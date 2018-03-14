@@ -3,11 +3,7 @@ Repository to store cogcomp's bib and cited bib files
 
 The full steps of generating ccg-style keys AUTOMATICALLY for your own bibfiles
 
-Step 0 create a new bib file containing *only* your added bib entries: yourfile.bib
-
-Step 1 use the java code to check if the author names is correctly separated by "and"
-
-       correct errors if you encounter any
+Step 1 create a new bib file containing *only* your added bib entries: yourfile.bib
 
 Step 2 open the program: java -jar jabref.jar
 
@@ -19,8 +15,25 @@ Step 2 open the program: java -jar jabref.jar
 
        save! done
 
-Step 3 merge yourfile.bib into both cited.bib and ccg.bib
+Step 3 merge yourfile.bib into cited.bib
 
        either by copy-paste or the "cat" command
 
 Step 4 run script genCitedConference.sh to generate both long and compact bib files
+
+
+The full steps of maintaining up-to-date ccg.bib
+
+Step 1 Download the latest bib file version from the publication page of the group website:
+        
+       http://cogcomp.org/bib/ccg.bib
+
+       Remove all the header information
+
+Step 2 manually check if the author names is correctly separated by "and"
+
+       manually correct errors 
+
+       or use the java code for assistance (see MainClass.java for details)
+
+Step 3 run script genCitedConference.sh to generate both long and compact bib files

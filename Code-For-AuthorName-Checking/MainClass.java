@@ -9,6 +9,7 @@ public class MainClass {
 		checkName("ccg.bib", "ccg_new.bib");
 	}
 
+	// replace the author name separation symbol from "," to "and"
 	private static void checkName(String infile, String outfile) throws IOException {
 		String content = IOManager.readContentNoTrim(infile);
 		int p = 0;
