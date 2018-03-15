@@ -13,7 +13,11 @@ Step 2 open the program: java -jar jabref.jar
 
        say yes, you want to overwrite the keys
 
-       save! done
+       save! 
+
+       Manually delete the header:
+       % This file was created with JabRef 2.10.
+       % Encoding: UTF-8
 
 Step 3 merge yourfile.bib into cited.bib
 
