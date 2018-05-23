@@ -40,4 +40,6 @@ Step 2 manually check if the author names is correctly separated by "and"
 
        or use the java code for assistance (see MainClass.java for details)
 
-Step 3 run script genCitedConference.sh to generate both long and compact bib files
+Step 3 update the web version here: legolas.cs.illinois.edu /srv/data/cogcomp/html/bib/
+
+Step 4 run script genCitedConference.sh to generate both long and compact bib files
