@@ -37,7 +37,7 @@ Step 4 Update the group server version with the fixed ccg_web.bib
 
        Add back all the header information
 
-       scp ccg_web.bib legolas.cs.illinois.edu /srv/data/cogcomp/html/bib/ccg.bib
+       scp ccg_web.bib legolas.cs.illinois.edu:/srv/data/cogcomp/html/bib/ccg.bib
 
 Step 5 Remove all the header information from ccg_web.bib to get ccg.bib
 
