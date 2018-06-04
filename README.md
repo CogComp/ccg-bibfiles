@@ -1,7 +1,7 @@
 # ccg-bibfiles
 Repository to store cogcomp's bib and cited bib files
 
-**The full steps of generating ccg-style keys AUTOMATICALLY for your own bibfiles**
+**The full steps of maintaining up-to-date cited.bib and cited-recent.bib**
 
 Step 1 Create a new bib file containing *only* your added bib entries: yourfile.bib
 
@@ -17,7 +17,7 @@ Step 3 *Sub-rountine - Generate correct bib entry keys and sort them by year via
 
 Step 4 Run script genCitedConference.sh to generate both long and compact bib files
 
-**The full steps of maintaining up-to-date ccg.bib**
+**The full steps of maintaining up-to-date ccg.bib and sync with group server**
 
 Step 1 Download the latest bib file version from the group server:
         
@@ -43,7 +43,7 @@ Step 5 Remove all the header information from ccg_web.bib to get ccg.bib
 
 Step 6 Run script genCitedConference.sh to generate both long and compact bib files
 
-*Sub-rountine - Generate correct bib entry keys and sort them by year via JabRef*
+**_Sub-rountine - Generate correct bib entry keys and sort them by year via JabRef_**
 
        open the program: java -jar jabref.jar
 
