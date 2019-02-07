@@ -10,9 +10,17 @@ from bibtexparser.bibdatabase import BibDatabase
 from bibtexparser.bwriter import BibTexWriter
 import copy
 
-test_bib_file = "../cited-recent.bib"
+test_bib_file = "test.bib"
+ccg_bib = "../ccg.bib"
 
+ACRONYMS = {}
 
+with open(ccg_bib) as fin:
+    ccg_db = bibtexparser.load(fin)
+    for key, val in ccg_db.strings.items():
+        ACRONYMS[key.upper()] = val
+
+print(ACRONYMS)
 
 def convert_entry_to_ccg_style(bib_str):
     """
@@ -79,7 +87,19 @@ def _entry_to_ccg_style(entry):
 
     new_entry["author"] = _author
 
-    # STEP 3: TODO? Any other fixes?
+    # STEP 3: Add double bracket to title, so that latex will know that we should keep capitalization there
+    if "title" in entry:
+        new_entry["title"] = "{" + new_entry["title"] + "}"
+
+    # STEP 4: Expand acronyms in booktitle or journal (e.g. ACM to Association for Computing Machinery)
+    if "booktitle" in entry:
+        if entry["booktitle"] in ACRONYMS:
+            new_entry["booktitle"] = ACRONYMS[new_entry["booktitle"]]
+
+    if "journal" in entry:
+        if entry["journal"] in ACRONYMS:
+            new_entry["journal"] = ACRONYMS[new_entry["journal"]]
+
 
     return new_key, _fix_capitalization(new_entry)
 
