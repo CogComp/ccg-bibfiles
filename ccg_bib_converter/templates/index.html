@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bibtex Converter - Cogcomp</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <h3>Ccg-style BibTex Converter</h3>
+        </div>
+        <div class="row">
+            <div class="col-5">
+                <div class="form-group">
+                    <label for="orig_bibtex">Paste your BibTex here!</label>
+                    <textarea class="form-control" id="orig_bibtex" rows="10"></textarea>
+                </div>
+            </div>
+            <div class="col-2">
+                <button id="btn_convert" type="button" class="btn btn-primary btn-lg" style="width: 100%; height: 50%; margin-top:25%">Convert!</button>
+            </div>
+            <div class="col-5">
+                <div class="form-group">
+                    <label for="orig_bibtex">Paste your BibTex here!</label>
+                    <textarea class="form-control" id="new_bibtex" rows="10" disabled></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="application/javascript">
+        $("#btn_convert").click(function() {
+            let orig_bib = $("#orig_bibtex").val();
+            console.log(orig_bib);
+            $.post( "/convert", orig_bib,
+                function(data) {
+                $("#new_bibtex").val(data);
+            });
+        })
+    </script>
+</body>
+</html>
