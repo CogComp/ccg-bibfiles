@@ -5,11 +5,13 @@ This script contains functions that convert general style bibtex into cogcomp st
 """
 
 import bibtexparser
+from bibtexparser.bparser import BibTexParser
 from bibtexparser.bibdatabase import BibDatabase
 from bibtexparser.bwriter import BibTexWriter
 import copy
 
 test_bib_file = "../cited-recent.bib"
+
 
 
 def convert_entry_to_ccg_style(bib_str):
@@ -32,7 +34,10 @@ def convert_entry_to_ccg_style(bib_str):
                 new_key: the new ccg-style entry key
                 new_bib: converted ccg-style entry in string form
     """
-    bib_db = bibtexparser.loads(bib_str)
+    parser = BibTexParser()
+    parser.ignore_nonstandard_types = False
+
+    bib_db = bibtexparser.loads(bib_str, parser)
 
     result_list = []
     for entry in bib_db.entries:

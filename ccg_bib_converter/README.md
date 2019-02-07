@@ -21,6 +21,6 @@ Then run the server
 
 ```sh
 $ export FLASK_APP=converter_server.py
-$ flask run --host=127.0.0.1
+$ flask run --host=127.0.0.1 --port=5000
  * Running on http://127.0.0.1:5000/
 ```
