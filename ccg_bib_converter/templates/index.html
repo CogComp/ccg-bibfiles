@@ -16,7 +16,7 @@
             <div class="col-5">
                 <div class="form-group">
                     <label for="orig_bibtex">Paste your BibTex here!</label>
-                    <textarea class="form-control" id="orig_bibtex" rows="10"></textarea>
+                    <textarea class="form-control" id="orig_bibtex" rows="20"></textarea>
                 </div>
             </div>
             <div class="col-2">
@@ -25,7 +25,7 @@
             <div class="col-5">
                 <div class="form-group">
                     <label for="orig_bibtex">Paste your BibTex here!</label>
-                    <textarea class="form-control" id="new_bibtex" rows="10" disabled></textarea>
+                    <textarea class="form-control" id="new_bibtex" rows="20" disabled></textarea>
                 </div>
             </div>
         </div>
@@ -34,7 +34,6 @@
     <script type="application/javascript">
         $("#btn_convert").click(function() {
             let orig_bib = $("#orig_bibtex").val();
-            console.log(orig_bib);
             $.post( "/convert", orig_bib,
                 function(data) {
                 $("#new_bibtex").val(data);

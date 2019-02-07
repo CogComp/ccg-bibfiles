@@ -11,8 +11,6 @@ def render_demo():
 @app.route("/convert", methods=['POST'])
 def api_convert():
     lists = convert_entry_to_ccg_style(request.get_data())
-    print(request.data)
-    print(lists)
     res_data =  "\n\n".join([_str for _, _, _str in lists])
     return res_data
 
