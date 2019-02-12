@@ -115,8 +115,10 @@ def _fix_capitalization(entry):
         else:
             new_entry[key.capitalize()] = copy.deepcopy(val)
 
-    print(new_entry)
-    new_entry["ENTRYTYPE"] = new_entry["ENTRYTYPE"].capitalize()
+    if new_entry["ENTRYTYPE"].lower() == "inproceedings":
+        new_entry["ENTRYTYPE"] = "InProceedings"
+    else:
+        new_entry["ENTRYTYPE"] = new_entry["ENTRYTYPE"].capitalize()
 
     return new_entry
 
