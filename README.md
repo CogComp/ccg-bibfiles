@@ -3,7 +3,9 @@ Repository to store cogcomp's bib and cited bib files
 
 **The full steps of maintaining up-to-date cited.bib and cited-recent.bib**
 
-Step 1 Create a new bib file containing *only* your added bib entries: yourfile.bib
+Step 0 Create a new bib file containing *only* your added bib entries: yourfile.bib
+
+Step 1 Make sure your bib file is following CCG format with the [conversion tool].(https://github.com/CogComp/ccg-bibfiles/tree/master/ccg_bib_converter)
 
 Step 2 Merge yourfile.bib into cited.bib
 
