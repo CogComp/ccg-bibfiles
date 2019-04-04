@@ -164,4 +164,23 @@ def _parse_author_string(author_string):
 
 
 if __name__ == '__main__':
-    print(convert_entry_to_ccg_style(open(test_bib_file).read()))
+    from sys import argv
+
+    if len(argv) != 4:
+        print("Usage: python3 ccg_style_bib_converter.py [original_bib_file] [new_bib_output_path] [mapping_output_path] ")
+
+    original_bib_file = argv[1]
+    new_bib_output_path = argv[2]
+    mapping_output_path = argv[3]
+
+    results = convert_entry_to_ccg_style(open(test_bib_file).read())
+
+    with open(new_bib_output_path, 'w', encoding='UTF-8') as new_bib_out, open(mapping_output_path, 'w', encoding='UTF-8') as mapping_out:
+        for old_key, new_key, new_entry_str in results:
+            new_bib_out.write(new_entry_str)
+            new_bib_out.write('\n\n')
+
+            mapping_out.write(old_key)
+            mapping_out.write('\t')
+            mapping_out.write(new_key)
+            mapping_out.write('\n')
