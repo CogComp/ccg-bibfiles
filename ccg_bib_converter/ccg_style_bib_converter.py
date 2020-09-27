@@ -20,7 +20,6 @@ with open(ccg_bib) as fin:
     for key, val in ccg_db.strings.items():
         ACRONYMS[key.upper()] = val
 
-print(ACRONYMS)
 
 def convert_entry_to_ccg_style(bib_str):
     """
@@ -164,4 +163,28 @@ def _parse_author_string(author_string):
 
 
 if __name__ == '__main__':
-    print(convert_entry_to_ccg_style(open(test_bib_file).read()))
+    import argparse
+
+    parser = argparse.ArgumentParser(
+        description="Convert a bib file to CCG format, and output a mapping between old and new key for each converted item.")
+
+    parser.add_argument("input_bib_file", type=str, help="path to input .bib file")
+    parser.add_argument("output_bib_path", type=str, help="path for the output .bib file")
+    parser.add_argument("output_mapping_path", type=str, help="path for the ouput key mapping")
+    args = parser.parse_args()
+
+    original_bib_file = args.input_bib_file
+    new_bib_output_path = args.output_bib_path
+    mapping_output_path = args.output_mapping_path
+
+    results = convert_entry_to_ccg_style(open(original_bib_file).read())
+
+    with open(new_bib_output_path, 'w', encoding='UTF-8') as new_bib_out, open(mapping_output_path, 'w', encoding='UTF-8') as mapping_out:
+        for old_key, new_key, new_entry_str in results:
+            new_bib_out.write(new_entry_str)
+            new_bib_out.write('\n\n')
+
+            mapping_out.write(old_key)
+            mapping_out.write('\t')
+            mapping_out.write(new_key)
+            mapping_out.write('\n')
