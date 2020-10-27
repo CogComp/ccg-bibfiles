@@ -1,4 +1,6 @@
 # ccg-bibfiles
+![AUTO_UPDATE_CCG_BIB](https://github.com/CogComp/ccg-bibfiles/workflows/AUTO_UPDATE_CCG_BIB/badge.svg)
+
 Repository to store CogComp's BibTex files for (1) [All Cogcomp publications](https://cogcomp.seas.upenn.edu/page/publications/). (2) All citations from CogComp papers. 
 ### Last Updated: Oct. 24, 2020
 ## Guide for Using bib files during Paper Writing
