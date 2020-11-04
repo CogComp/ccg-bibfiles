@@ -23,7 +23,7 @@ jobs:
 
       # Checks out 
       - name: download ccg.bib
-        run: wget https://cogcomp.seas.upenn.edu/bib/ccg.bib
+        run: curl -O https://cogcomp.seas.upenn.edu/bib/ccg.bib
       
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v3
