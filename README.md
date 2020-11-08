@@ -4,7 +4,9 @@
 Repository to store CogComp's BibTex files for (1) [All Cogcomp publications](https://cogcomp.seas.upenn.edu/page/publications/). (2) All citations from CogComp papers. 
 ### Last Updated: Oct. 24, 2020
 ## Guide for Using bib files during Paper Writing
-We recommend using 3 bib files for paper writing. 
+We recommend using 3 bib files for paper writing. Visit the [CCG-latex-template overleaf repo](https://www.overleaf.com/8268891749mtdvvjvnzrrr
+) to get the latest version of these files. 
+
 1. **ccg.bib**, which has all previous papers from CogComp.
 2. **cited.bib**, which includes all cited papers in previous CogComp publications
 3. **new.bib**, where you will put all new citations in. 
@@ -29,7 +31,7 @@ After your paper gets published, we need to update `cited.bib` to include all ne
 
 1. Convert your `new.bib` file to the CCG format with the [conversion tool].(https://github.com/CogComp/ccg-bibfiles/tree/master/ccg_bib_converter). Check the sub-folder readme for detailed steps. 
 
-2. Merge `new.bib` into `cited.bib`
+2. Merge `new.bib` into `cited.bib`. Get the latest cited.bib from the [CCG-latex-template overleaf repo](https://www.overleaf.com/8268891749mtdvvjvnzrrr).
 
        either by copy-paste or the "cat" command
 
@@ -39,3 +41,6 @@ After your paper gets published, we need to update `cited.bib` to include all ne
 
 - *To generate cited-recent.bib*: In JabRef, select all entries after year 2004 (2004 included) and make a copy
 - Run script genCitedConference.sh to generate both long and compact bib files
+
+5. Update `cited.bib` to the [CCG-latex-template overleaf repo](https://www.overleaf.com/8268891749mtdvvjvnzrrr)
+
