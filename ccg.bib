@@ -106,6 +106,7 @@
 @string{ICMI = {Proc. of the International Conference on Multimodal Interfaces (ICMI)}}
 @string{ICML = {Proc. of the International Conference on Machine Learning (ICML)}}
 @string{ICSC = {Proc. of the IEEE International Conference on Semantic Computing (ICSC)}}
+@string{ICWSM = {Proceedings of the International AAAI Conference on Web and Social Media}}
 @string{IJCAI = {Proc. of the International Joint Conference on Artificial Intelligence (IJCAI)}}
 @string{IJCNLP = {Proc. of the International Joint Conference on Natural Language Processing (IJCNLP)}}
 @string{IJMLC = {International Journal of Machine Learning and Computing (IJMLC)}}
@@ -148,7 +149,33 @@
 %%%%%%%%%%%%%%
 %%%  2021  %%%
 %%%%%%%%%%%%%%
-{LCRC21,
+@inproceedings{MCKR21,
+  author = {Ansel MacLaughlin and Tao Chen and Burcu Karagol Ayan and Dan Roth},
+  title = {{Context-Based Quotation Recommendation}},
+  booktitle = ICWSM,
+  year = {2021},
+  url = "https://cogcomp.seas.upenn.edu/papers/MCKR21.pdf",
+}
+
+@article{GKSKRB21,
+  author = {Mor Geva and Daniel Khashabi and Elad Segal and Tushar Khot and Dan Roth and Jonathan Berant},
+  title = {{Did Aristotle Use a Laptop? A Question Answering Benchmark with Implicit Reasoning Strategies}},
+  booktitle = TACL,
+  year = {2021},
+  url = "https://cogcomp.seas.upenn.edu/papers/GKSKRB21.pdf",
+  funding = {ONR, KAIROS},
+}
+
+@inproceedings{CSZR21,
+  author = {Muhao Chen and Weijia Shi and Ben Zhou and Dan Roth},
+  title = {{Cross-lingual Entity Alignment with Incidental Supervision}},
+  booktitle = EACL,
+  year = {2021},
+  url = "https://cogcomp.seas.upenn.edu/papers/CSZR21.pdf",
+  funding = {KAIROS, BETTER},
+}
+
+@inproceedings{LCRC21,
   author = {Fangyu Liu and Muhao Chen and Dan Roth and Nigel Collier},
   title = {{Visual Pivoting for (Unsupervised) Entity Alignment}},
   booktitle = AAAI,
@@ -161,6 +188,24 @@
 %%%%%%%%%%%%%%
 %%%  2020  %%%
 %%%%%%%%%%%%%%
+@inproceedings{KMPWHRZD20,
+  author = {Ayal Klein and Jonathan Mamou and Valentina Pyatkin and Daniela Brook Weiss and Hangfeng He and Dan Roth and Luke Zettlemoyer and Ido Dagan},
+  title = {{QANom: Question-Answer driven SRL for Nominalizations}},
+  booktitle = COLING,
+  year = {2020},
+  url = "https://cogcomp.seas.upenn.edu/papers/KMPWHRZD20.pdf",
+  funding = {KAIROS, BETTER},
+}
+
+@inproceedings{ChenHeSu20,
+  author = {Shuxiao Chen and Hangfeng He and Weijie Su},
+  title = {{Label-Aware Neural Tangent Kernel: Toward Better Generalization and Local Elasticity}},
+  booktitle = NeurIPS,
+  year = {2020},
+  url = "https://cogcomp.seas.upenn.edu/papers/ChenHeSu20.pdf",
+  funding = {LwLL},
+}
+
 @inproceedings{NWHPGR20,
   author = {Qiang Ning and Hao Wu and Rujun Han and Nanyun Peng and Matt Gardner and Dan Roth},
   title = {{TORQUE: A Reading Comprehension Dataset of Temporal ORdering QUEstions}},
@@ -178,7 +223,7 @@
   url = "https://cogcomp.seas.upenn.edu/papers/DCZSR20.pdf",
 }
 
-{WangNiRo20,
+@inproceedings{WangNiRo20,
   author = {Kaifu Wang and Qiang Ning and Dan Roth},
   title = {{Learnability with Indirect Supervision Signals}},
   booktitle = NeurIPS,
@@ -319,7 +364,7 @@
 @inproceedings{HeNiRo20,
   author = {Hangfeng He and Qiang Ning and Dan Roth},
   title = {{QUASE: Question-Answer Driven Sentence Encoding}},
-  booktitle = ACL,
+  booktitle = AISTATS,
   year = {2020},
   url = "https://cogcomp.seas.upenn.edu/papers/HeNiRo20.pdf",
 }
@@ -1078,6 +1123,17 @@
 %%%%%%%%%%%%%%
 %%%  2016  %%%
 %%%%%%%%%%%%%%
+@incollection{RizzoloRo16,
+  author = {Nick Rizzolo and Dan Roth},
+  title = {{Integer Linear Programming for Coreference Resolution}},
+  booktitle = {Anaphora Resolution: Algorithms, Resources, and Applications},
+  year = {2016},
+  publisher = {Springer-Verlag},
+  editor = {Massimo Poesio and Roland Stuckardt and Yannick Versley},
+  url = {},
+  invisible = {true},
+}
+
 @techreport{TSMSR16,
   author = {Chen-Tse Tsai and Yangqiu Song and Stephen Mayhew and Mark Sammons and and Dan Roth},
   title = {{Illinois CCG LoReHLT 2016 Named Entity Recognition and Situation Frame Systems}},
@@ -1272,17 +1328,6 @@
   month = {6},
   year = {2016},
   url = "http://cogcomp.org/papers/TsaiRo16b.pdf",
-}
-
-@incollection{RizzoloRo16,
-  author = {Nick Rizzolo and Dan Roth},
-  title = {{Integer Linear Programming for Co-reference Resolution}},
-  booktitle = {Anaphora Resolution: Algorithms, Resources, and Applications},
-  year = {2016},
-  publisher = {Springer-Verlag},
-  editor = {Massimo Poesio, Roland Stuckardt and Yannick Versley},
-  url = {},
-  invisible = {true},
 }
 
 @article{TsaiRo16,
