@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bibtex Converter - Cogcomp</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flat-ui/2.3.0/css/flat-ui.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col" >
+                <h3>Ccg-style BibTex Converter</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-5">
+                <div class="form-group">
+                    <label for="orig_bibtex">Paste your BibTex here!</label>
+                    <textarea class="form-control" id="orig_bibtex" rows="20"></textarea>
+                </div>
+            </div>
+            <div class="col-2">
+                <button id="btn_convert" type="button" class="btn btn-primary btn-lg" style="width: 100%; height: 30%; margin-top:30%">Convert!</button>
+            </div>
+            <div class="col-5">
+                <div class="form-group">
+                    <label for="orig_bibtex">CCG style BibTex here!</label>
+                    <textarea style="color:black" class="form-control" id="new_bibtex" rows="20" disabled></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="application/javascript">
+        $("#btn_convert").click(function() {
+            let orig_bib = $("#orig_bibtex").val();
+            $.post( "https://8iufgyrae4.execute-api.us-east-1.amazonaws.com/prod/convert", JSON.stringify({"bib_str": orig_bib}),
+                function(data) {
+                $("#new_bibtex").val(data);
+            }).fail(function(e) {
+                $("#new_bibtex").val("error: see console");
+                console.log(e);
+            });
+        })
+    </script>
+</body>
+</html>
