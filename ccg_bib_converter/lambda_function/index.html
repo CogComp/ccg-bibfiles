@@ -41,7 +41,7 @@
                 function(data) {
                 $("#new_bibtex").val(data);
             }).fail(function(e) {
-                $("#new_bibtex").val("error: see console");
+                $("#new_bibtex").val(e.responseText);
                 console.log(e);
             });
         })
